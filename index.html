@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Train Scheduler</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Hind" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+	<header class="container">
+		Lone Star Express
+	</header>
+	
+	<div class="container tableContainer">
+		<table class="centered highlight" id="theTable">
+			<thead>
+			<tr>
+	            <th>Train Name</th>
+	            <th>Destination</th>
+	            <th>Frequency</th>
+	            <th>Next Arrival</th>
+	            <th>Minutes Away</th>
+        	</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container buttonContainer">
+	<h3>Add Train</h3>
+	<a class="btn-floating btn-large waves-effect waves-light addButton"><i class="material-icons">add</i></a>
+	</div>
+
+
+	 <div class="container formContainer row">
+    <form class="col s12">
+    	<h2>For Administrative Use Only</h2>
+  
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="trainName" type="text" class="validate">
+          <label class="label" for="trainName">Train Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="dest" type="text" class="validate">
+          <label class="label" for="dest">Destination</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="firstTrain" type="text" class="validate">
+          <label class="label" for="firstTrain">Time for First Time of the Train <em>(HH:mm-military time)</em></label>
+        </div>
+        <div class="input-field col s6">
+          <input id="freq" type="text" class="validate">
+          <label class="label" for="freq">Frequency (min)</label>
+        </div>
+      </div>
+      <div class="buttonContainer"><button class="btn waves-effect waves-light subBtn" type="submit" name="action">Submit<i class="material-icons right">send</i></button></div>
+    </form>
+  </div>
+
+  	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"	></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	<script src="javascript/app.js"></script>
+</body>
+</html>

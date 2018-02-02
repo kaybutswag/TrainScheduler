@@ -1,0 +1,94 @@
+*{
+	box-sizing: border-box;
+}
+
+header{
+	font-family: 'Anton', sans-serif;
+	text-align: center;
+	color: #DC304B;
+	font-size: 40px;
+}
+body{
+	font-family: 'Hind', sans-serif;
+	background-color: #1F2D3D;
+}
+
+h2, h3{
+	text-align: center;
+	color: #FFF;
+	
+	font-family: 'Anton', sans-serif;
+}
+
+h2{
+	font-size: 24px;
+}
+
+h3{
+	font-size: 18px;
+}
+
+tbody{
+	background-color: #FFF;
+	color: #1F2D3D;
+}
+
+td{
+	border-radius: 0;
+}
+input{
+	color: #FFFFFF;
+}
+
+.buttonContainer{
+	text-align: center;
+	padding: 5px;
+}
+
+.myButton{
+	color: #F95F62 !important;
+}
+
+.formContainer, .tableContainer{
+	background-color: #5A6D82;
+	margin: 10px auto;
+}
+
+.formContainer{
+	display: none;
+}
+
+.input-field label {
+    color: #DC304B;
+}
+
+.input-field label:valid {
+    color: #FFF !important;
+}
+
+.input-field input[type=text]:focus + label {
+	color: #FFF !important;
+}
+
+.input-field input[type=text]:focus{
+    border-bottom: 1px solid #FFF !important;
+    box-shadow: 0 1px 0 0 #FFF !important;
+ }
+
+.input-field input[type=text].valid{
+	color: #FFF !important;
+	border-bottom: 1px solid #FFF;
+	box-shadow: 0 1px 0 0 #FFF;
+ }
+
+ .input-field input[type=text].invalid {
+    color: #6B1725 !important;
+	border-bottom: 1px solid #6B1725;
+	box-shadow: 0 1px 0 0 #6B1725;
+   }
+
+   .subBtn{
+   	margin-bottom: 5px;
+   	font-family: 'Anton', sans-serif;
+
+   }
