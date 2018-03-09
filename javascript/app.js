@@ -1,4 +1,6 @@
 
+ 
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB2TsF4Giyg9uRm7JWJ3CqnI7FHKhx7bKo",
     authDomain: "trainproject-3a877.firebaseapp.com",
@@ -8,6 +10,7 @@
     messagingSenderId: "906752244706"
   };
   firebase.initializeApp(config);
+
 
 var database = firebase.database();
 
@@ -26,37 +29,37 @@ $(".addButton").on("click", function(){
   }
 });
 
-     $("#formValidate").validate({
-        rules: {
-            trainName: {
-                required: true
-            },
-            dest: {
-                required: true
-            },
-            firstTrain: {
-                required: true
-            },
-            freq: {
-                required: true
-            },
+     // $("#formValidate").validate({
+     //    rules: {
+     //        trainName: {
+     //            required: true
+     //        },
+     //        dest: {
+     //            required: true
+     //        },
+     //        firstTrain: {
+     //            required: true
+     //        },
+     //        freq: {
+     //            required: true
+     //        },
 
-        },
+     //    },
 
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-          var placement = $(element).data('error');
-          if (placement) {
-            $(placement).append(error)
-          } else {
-            error.insertAfter(element);
-          }
-        }
-     });
+     //    errorElement : 'div',
+     //    errorPlacement: function(error, element) {
+     //      var placement = $(element).data('error');
+     //      if (placement) {
+     //        $(placement).append(error)
+     //      } else {
+     //        error.insertAfter(element);
+     //      }
+     //    }
+     // });
 
-     $('#firstTrain').formatter({
-          'pattern': '{{99}}:{{99}}',
-});
+//      $('#firstTrain').formatter({
+//           'pattern': '{{99}}:{{99}}',
+// });
 
     
  $(".subBtn").on("click", function(e) {
