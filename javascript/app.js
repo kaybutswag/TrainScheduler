@@ -25,6 +25,39 @@ $(".addButton").on("click", function(){
   buttonState="hidden";
   }
 });
+
+     $("#formValidate").validate({
+        rules: {
+            trainName: {
+                required: true
+            },
+            dest: {
+                required: true
+            },
+            firstTrain: {
+                required: true
+            },
+            freq: {
+                required: true
+            },
+
+        },
+
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+          if (placement) {
+            $(placement).append(error)
+          } else {
+            error.insertAfter(element);
+          }
+        }
+     });
+
+     $('#firstTrain').formatter({
+          'pattern': '{{99}}:{{99}}',
+});
+
     
  $(".subBtn").on("click", function(e) {
 
