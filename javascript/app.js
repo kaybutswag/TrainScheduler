@@ -1,5 +1,4 @@
 
- 
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB2TsF4Giyg9uRm7JWJ3CqnI7FHKhx7bKo",
@@ -14,65 +13,68 @@
 
 var database = firebase.database();
 
-var buttonState="hidden";
+$(document).ready(function(){
+
+
+    
 
 
 $(".addButton").on("click", function(){
-  if(buttonState==="hidden"){
   $(".formContainer").css("display","block");
-  buttonState="active";
-  }
-
-  else{
-    $(".formContainer").css("display","none");
-  buttonState="hidden";
-  }
+  $(".buttonContainer").css("display","none");
 });
 
-     // $("#formValidate").validate({
-     //    rules: {
-     //        trainName: {
-     //            required: true
-     //        },
-     //        dest: {
-     //            required: true
-     //        },
-     //        firstTrain: {
-     //            required: true
-     //        },
-     //        freq: {
-     //            required: true
-     //        },
+$(".close").on("click", function(){
+  $(".formContainer").css("display","none");
+  $(".buttonContainer").css("display","block");
+});
 
-     //    },
-
-     //    errorElement : 'div',
-     //    errorPlacement: function(error, element) {
-     //      var placement = $(element).data('error');
-     //      if (placement) {
-     //        $(placement).append(error)
-     //      } else {
-     //        error.insertAfter(element);
-     //      }
-     //    }
-     // });
-
-//      $('#firstTrain').formatter({
-//           'pattern': '{{99}}:{{99}}',
-// });
 
     
  $(".subBtn").on("click", function(e) {
 
       e.preventDefault();
 
-      console.log("i clicked");
+      $(".error1").html("&nbsp;");
+      $(".error2").html("&nbsp;");
+      $(".error3").html("&nbsp;");
+      $(".error4").html("&nbsp;");
 
       var trainName = $("#trainName").val().trim();
       var dest = $("#dest").val().trim();
       var freq = $("#freq").val().trim();
       var firstTrain = $("#firstTrain").val().trim();
+      var convertedTime=moment(firstTrain,"hh:mm").subtract(1,"years");
+      console.log(freq);
+      console.log(isNaN(freq));
+      console.log(convertedTime);
 
+      var testmode=true;
+
+      if (trainName===""){
+        $(".error1").text("Required Field");
+        return;
+      }
+
+      else if (dest===""){
+        $(".error2").text("Required Field");
+        return;
+      }
+
+      else if (isNaN(freq)===true||freq===0){
+        $(".error3").text("Frequency must be a Valid Number");
+        return;
+      }
+
+      else if(convertedTime._isValid===false){
+        $(".error4").text("Invalid Format");
+      }
+
+      // else if (testmode===true){
+      //   console.log("stop here")
+      // }
+
+      else{
 
 
       database.ref().push({
@@ -86,6 +88,7 @@ $(".addButton").on("click", function(){
     $("#dest").val("");
     $("#freq").val("");
     $("#firstTrain").val("");
+  }
 
 });
 
@@ -98,22 +101,33 @@ database.ref().on("child_added", function(childSnapshot) {
   var firstTrain = childSnapshot.val().firstTrain;
 
   //time convverstions
-  var convertedTime=moment(firstTrain,"hh:mm").subtract(1,"years");
-  var diffTime=moment().diff(moment(convertedTime),"minutes");
+  var convertedTime2=moment(firstTrain,"HH:mm").subtract(1,"years");
+  var diffTime=moment().diff(moment(convertedTime2),"minutes");
   var remainder=diffTime%freq;
 
   var minutesLeft=freq-remainder;
-  var nextTrain=moment().add(minutesLeft, "minutes").format("hh:mm");
 
+  var nextTrain=moment().add(minutesLeft, "minutes").format("HH:mm");
+
+    if(nextTrain<moment().subtract(1,"years").format("HH:mm"))
+      nextTrain="None Today";
+
+    
 
   $("#theTable > tbody").append("<tr><td>" + trainName+ "</td><td>" + dest + "</td><td>" +
-  freq + "</td><td>" + nextTrain + "</td><td>" + minutesLeft + "</td></tr>");
+  freq + "</td><td>" + nextTrain + "</td><td class='min'>" + minutesLeft + "</td></tr>");
 
-
+// console.log("Test");
 
 }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
     });
+
+
+setTimeout(function(){
+  $('#theTable').load(location.href+" #theTable>*","");
+},1000);
+});
 
 
 

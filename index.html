@@ -4,75 +4,91 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Train Scheduler</title>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Anton|Hind" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Work+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
 <body>
-	<header class="container">
-		Lone Star Express
-	</header>
+	<div class="bkg-animated">
+		<header class="container">
+			<div class="headerBox">
+				WESTERN WAY
+			</div>
+		</header>
+		
+		<div class="container container2">
+			<div class="tableContainer">
+			<table class="centered highlight" id="theTable">
+				<thead>
+				<tr>
+		            <th>Train Name</th>
+		            <th>Destination</th>
+		            <th>Frequency</th>
+		            <th>Next Arrival</th>
+		            <th>Minutes Away</th>
+	        	</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			</div>
+		</div>
 	
-	<div class="container tableContainer">
-		<table class="centered highlight" id="theTable">
-			<thead>
-			<tr>
-	            <th>Train Name</th>
-	            <th>Destination</th>
-	            <th>Frequency</th>
-	            <th>Next Arrival</th>
-	            <th>Minutes Away</th>
-        	</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-	</div>
-	
-	<div class="container buttonContainer">
-	<h3>Add Train</h3>
-	<a class="btn-floating btn-large waves-effect waves-light addButton"><i class="material-icons">add</i></a>
+	<div class="container buttonContainer">	
+		<a class="addButton"><h3>Add Train</h3></a>
 	</div>
 
 
-	 <div class="container formContainer row">
+	 <div class="container formContainer">
+	 	<div class="close">x</div>
     <form class="col s12">
     	<h2>For Administrative Use Only</h2>
-  
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="trainName" type="text" class="validate">
-          <label class="label" for="trainName">Train Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="dest" type="text" class="validate">
-          <label class="label" for="dest">Destination</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="firstTrain" type="text" class="validate">
-          <label class="label" for="firstTrain">Time for First Time of the Train <em>(HH:mm-military time)</em></label>
-        </div>
-        <div class="input-field col s6">
-          <input id="freq" type="text" class="validate">
-          <label class="label" for="freq">Frequency (min)</label>
-        </div>
-      </div>
-      <div class="buttonContainer"><button class="btn waves-effect waves-light subBtn" type="submit" name="action">Submit<i class="material-icons right">send</i></button></div>
+
+    	<div class="inputRow">
+		
+		<div class="halfColumn">
+	        <div class="input-field">
+	          <input id="trainName" type="text">
+	          <label class="label" for="trainName">Train Name</label>
+	           <p class="error1">&nbsp;</p>
+	        </div>
+	        <div class="input-field">
+	          <input id="dest" type="text">
+	          <label class="label" for="dest">Destination</label>
+	          <p class="error2">&nbsp;</p>
+	        </div>
+	      </div>
+		
+		<div class="halfColumn">
+	      	<div class="input-field">
+	          <input id="freq" type="text">
+	          <label class="label" for="freq">Frequency (min)</label>
+	          <p class="error3">&nbsp;</p>
+	        </div>
+	        <div class="input-field">
+	          <input id="firstTrain" type="text" placeholder="HH:mm (military time)">
+	          <label class="label" for="firstTrain">First Time of Departure</label>
+	          <p class="error4">&nbsp;</p>
+	        </div>
+	     </div>
+
+    </div>
+
+      <div class="buttonContainer2"><button class="subBtn" type="submit" name="action">Submit</button></div>
       <h3></h3>
     </form>
   </div>
+</div>
 
   	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"	></script>
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
   	<script src="javascript/app.js"></script>
 </body>
 </html>
