@@ -124,9 +124,9 @@ database.ref().on("child_added", function(childSnapshot) {
     });
 
 
-setTimeout(function(){
-  $('#theTable').load(location.href+" #theTable>*","");
-},60000);
+// setTimeout(function(){
+//   $('#theTable').load(location.href+" #theTable>*","");
+// },60000);
 });
 
 
