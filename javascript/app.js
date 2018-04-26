@@ -126,7 +126,7 @@ database.ref().on("child_added", function(childSnapshot) {
 
 setTimeout(function(){
   $('#theTable').load(location.href+" #theTable>*","");
-},1000);
+},60000);
 });
 
 
