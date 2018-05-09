@@ -16,16 +16,11 @@ html, body {
   height: 100%;
   color: #232011;
 }
+
 .bkg-animated {
-  background: linear-gradient(to bottom, black,transparent),url("../images/train.png") repeat 0 0;
-  background: opacity(0.5);
-  /*width: 100%;*/
-  margin: 0;
-  height: 100%;
-  background-size: cover;
-  text-align: center;
-  padding-top: 20px;
-  box-sizing: border-box;
+  background: url("../images/trainChris.png") repeat 0 0;
+  height:100%;
+  background-size: contain;
   -webkit-animation: slide 20s linear infinite;
 }
 
@@ -42,7 +37,7 @@ header{
 	text-align: center;
 	font-family: 'kelvinizednormal';
 	text-align: center;
-	color: #ED0311;
+	color: #CB2727;
 	font-size: 72px;
 	padding: 20px;
 	font-kerning: normal;
@@ -76,8 +71,8 @@ tbody{
 
 td{
 	border-radius: 0;
-	background-color:#534B52;
-	color: #E0DDCF;
+	background-color:#D8D8D8;
+	color: #090446;
 	padding: 2px 2px;
 }
 
@@ -87,24 +82,17 @@ td{
 }
 .buttonContainer, .formContainer{
 	max-width: 200px;
-	background-color: #E0DDCF;
+	background-color: #f6f4ea;
 	border: 4px solid #090446;
 	color:#090446;
 	text-align: center;
 	margin: 40px auto;
-	background-color: #E0DDCF;
 	font-family: 'kelvinizednormal';
 }
 
 .formContainer{
 	font-family: 'Work Sans', sans-serif;
 	max-width: 720px;
-	background-color: #E0DDCF;
-	border: 4px solid #090446;
-	color:#090446;
-	text-align: center;
-	margin: 40px auto;
-	background-color: #E0DDCF;
 	height:200px;
 	text-align: left;
 	padding: 10px;
@@ -115,8 +103,11 @@ td{
 }
 
 #theTable{
-	margin:auto;
+	margin:2%;
 	text-align: center;
+	background-color: #f6f4ea;
+	padding: 10px;
+	border-radius:10px;
 }
 
 .myButton{
@@ -130,16 +121,13 @@ td{
 	max-width: 720px;
 	margin:auto;
 	text-align: center;
-	border: 4px solid #090446;
+	border-radius:10px;
 	padding: 20px;
 	overflow-y: auto;
-}
-
-
-.tableContainer{
-	background-color: #E0DDCF;
+	background-color: rgba(0, 0, 0, 0.5);
 	margin: 10px auto;
 }
+
 
 .close{
 	text-align: right;
