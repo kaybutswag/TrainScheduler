@@ -18,7 +18,7 @@ html, body {
 }
 
 .bkg-animated {
-  background: url("../images/trainChris.png") repeat 0 0;
+  background: url("../images/trainChris.png") repeat center center;
   height:100%;
   background-size: contain;
   -webkit-animation: slide 20s linear infinite;
@@ -84,6 +84,7 @@ td{
 	max-width: 200px;
 	background-color: #f6f4ea;
 	border: 4px solid #090446;
+	border-radius: 25px;
 	color:#090446;
 	text-align: center;
 	margin: 40px auto;
@@ -190,3 +191,43 @@ input{
    	font-family: 'Anton', sans-serif;
 
    }
+
+@media only screen and (max-width: 980px) {
+    .bkg-animated 	{
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 751px) {
+    .tableContainer{
+        font-size:10px;
+    }
+
+    .headerBox{
+    	font-size:7vw;
+    }
+
+    #theTable{
+    	margin:auto;
+    }
+
+    .close{
+		font-size:12px;
+    }
+
+    form h2{
+    	font-size:18px;
+    }
+
+    form label{
+    	font-size: 8px;
+    }
+
+    form input{
+    	width: 100px;
+    }
+
+    .addButton h3{
+    	font-size:12px;
+    }
+}
