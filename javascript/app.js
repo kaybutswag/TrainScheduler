@@ -24,7 +24,6 @@ function reload(){
   $("#theTable > tbody").append("<tr><td>" + trainName+ "</td><td>" + dest + "</td><td>" +
   freq + "</td><td>" + nextTrain + "</td><td class='min'>" + minutesLeft + "</td></tr>");
 
-console.log("refresh");
 
 }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
